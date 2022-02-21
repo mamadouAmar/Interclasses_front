@@ -1,0 +1,30 @@
+import 'package:flutter/cupertino.dart';
+
+class SmallText extends StatelessWidget {
+  final Color? color;
+  final String text;
+  double size;
+  double heignt;
+
+  SmallText({
+    Key? key,
+    this.color = const Color(0xFFccc7c5),
+    required this.text,
+    this.size = 12,
+    this.heignt = 1.2,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontFamily: 'Schyler',
+        color: color,
+        fontSize: size,
+        fontWeight: FontWeight.w400,
+        height: heignt,
+      ),
+    );
+  }
+}

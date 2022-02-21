@@ -1,0 +1,32 @@
+import 'package:flutter/cupertino.dart';
+
+class IconAndText extends StatelessWidget {
+  final Color? color;
+  final Icon icon;
+  final String text;
+  double size;
+  
+
+  IconAndText(
+      {Key? key,
+      this.color = const Color(0xFF332d2b),
+      required this.text,
+      this.size = 20,
+     })
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children:[
+        AppIcon(icon: icon),
+      Text(
+        text,
+      style: TextStyle(
+          fontFamily: 'Schyler',
+          color: color,
+          fontSize: size == 0 ? 20 : size,
+          fontWeight: FontWeight.w400),
+    );
+  }
+}
