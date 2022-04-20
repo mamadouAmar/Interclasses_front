@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:projet1/pages/food/article.dart';
 import 'package:projet1/utils/colors.dart';
 import 'package:projet1/widgets/app_icon.dart';
 import 'package:projet1/widgets/big_text.dart';
@@ -7,6 +8,7 @@ import 'package:projet1/widgets/icon_and_text_widget.dart';
 import 'package:projet1/widgets/small_text.dart';
 
 import '../../widgets/exandable_text_widget.dart';
+import '../food/starFoot.dart';
 //import 'package:projet1/utils/dimension.dart';
 //import 'package:get/get.dart';
 
@@ -54,138 +56,168 @@ class _foodPageBodyState extends State<foodPageBody> {
       ),
       body: Column(children: [
         Container(
-            // color: Colors.redAccent,
-            height: 320,
-            child: PageView.builder(
-              itemCount: 5,
-              itemBuilder: (context, position) {
-                return _buildPageItem(position);
-              },
-            )),
+          // color: Colors.redAccent,
+          height: 300,
+          child: Expanded(
+              child: PageView.builder(
+            itemCount: 5,
+            itemBuilder: (context, position) {
+              return _buildPageItem(position);
+            },
+          )),
+        ),
         SizedBox(height: 30),
-        ListView.builder(
-            physics: AlwaysScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return Container(
-                  margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-                  child: SafeArea(
-                      child: SingleChildScrollView(
-                          child: Container(
-                              //height: 100,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(10),
-                                  bottomRight: Radius.circular(10),
-                                  topLeft: Radius.circular(10),
-                                  bottomLeft: Radius.circular(10),
-                                ),
-                                //color: Colors.white,
-                              ),
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 10, right: 10),
-                                  child: Column(children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            BigText(
-                                              text: "Football 2022",
-                                              color: Colors.white,
-                                              size: 26,
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            SmallText(
-                                              text: "Phase de Poule",
-                                              size: 18,
-                                              color: Colors.white,
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                          ],
-                                        ),
-                                        AppIcon(
-                                            icon: Icons.arrow_forward_ios,
-                                            size: 50,
-                                            iconColor: Colors.white,
-                                            backgroundColor:
-                                                AppColors.mainColor),
-                                      ],
+        Expanded(
+          child: ListView.builder(
+              physics: AlwaysScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return Container(
+                    margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
+                    child: SafeArea(
+                        child: Expanded(
+                            child: SingleChildScrollView(
+                                child: Container(
+                                    //height: 100,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(10),
+                                        bottomRight: Radius.circular(10),
+                                        topLeft: Radius.circular(10),
+                                        bottomLeft: Radius.circular(10),
+                                      ),
+                                      //color: Colors.white,
                                     ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Column(
-                                          children: [
-                                            Row(
-                                              children: [
-                                                BigText(
-                                                  text: "TC1",
-                                                  color: Colors.white,
-                                                ),
-                                                BigText(
-                                                  text: "vs",
-                                                  color: Colors.white,
-                                                ),
-                                                BigText(
-                                                  text: "TC2",
-                                                  color: Colors.white,
-                                                ),
-                                              ],
-                                            ),
-                                            Row(
-                                              children: [
-                                                BigText(
-                                                  text: "0",
-                                                  color: Colors.white,
-                                                ),
-                                                BigText(
-                                                  text: "-",
-                                                  color: Colors.white,
-                                                ),
-                                                BigText(
-                                                  text: "0",
-                                                  color: Colors.white,
-                                                ),
-                                              ],
-                                            )
-                                          ],
-                                        ),
-                                        Column(
-                                          children: [
-                                            Row(
-                                              children: [
-                                                BigText(
-                                                  text: "Samedi 29-05-2022",
-                                                  color: Colors.white,
-                                                ),
-                                              ],
-                                            ),
-                                            Row(
-                                              children: [
-                                                BigText(
-                                                  text: "17h-15min",
-                                                  color: Colors.white,
-                                                ),
-                                              ],
-                                            )
-                                          ],
-                                        ),
-                                      ],
-                                    )
-                                  ]))))));
-            }),
+                                    child: Expanded(
+                                        child: Padding(
+                                            padding: EdgeInsets.only(
+                                                left: 10, right: 10),
+                                            child: Column(children: [
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      BigText(
+                                                        text: "Football 2022",
+                                                        color: Colors.white,
+                                                        size: 26,
+                                                      ),
+                                                      SizedBox(
+                                                        height: 10,
+                                                      ),
+                                                      SmallText(
+                                                        text: "Phase de Poule",
+                                                        size: 18,
+                                                        color: Colors.white,
+                                                      ),
+                                                      SizedBox(
+                                                        height: 10,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  ElevatedButton(
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                        primary:
+                                                            AppColors.mainColor,
+                                                        fixedSize:
+                                                            const Size(44, 44),
+                                                        shape:
+                                                            const CircleBorder(),
+                                                      ),
+                                                      onPressed: () {
+                                                        Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        StarFoot()));
+                                                      },
+                                                      child: Wrap(
+                                                        children: [
+                                                          Icon(Icons
+                                                              .arrow_forward_ios)
+                                                        ],
+                                                      )),
+                                                ],
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Column(
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          BigText(
+                                                            text: "TC1",
+                                                            color: Colors.white,
+                                                          ),
+                                                          BigText(
+                                                            text: "vs",
+                                                            color: Colors.white,
+                                                          ),
+                                                          BigText(
+                                                            text: "TC2",
+                                                            color: Colors.white,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          BigText(
+                                                            text: "0",
+                                                            color: Colors.white,
+                                                          ),
+                                                          BigText(
+                                                            text: "-",
+                                                            color: Colors.white,
+                                                          ),
+                                                          BigText(
+                                                            text: "0",
+                                                            color: Colors.white,
+                                                          ),
+                                                        ],
+                                                      )
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          BigText(
+                                                            text:
+                                                                "Samedi 29-05-2022",
+                                                            color: Colors.white,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          BigText(
+                                                            text: "17h-15min",
+                                                            color: Colors.white,
+                                                          ),
+                                                        ],
+                                                      )
+                                                    ],
+                                                  ),
+                                                ],
+                                              )
+                                            ]))))))));
+              }),
+        )
       ]),
       bottomNavigationBar: Column(mainAxisSize: MainAxisSize.min, children: [
         Container(
@@ -194,22 +226,60 @@ class _foodPageBodyState extends State<foodPageBody> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                AppIcon(
-                    icon: Icons.home,
-                    iconColor: Colors.white,
-                    backgroundColor: AppColors.mainColor),
-                AppIcon(
-                    icon: Icons.explore,
-                    iconColor: Colors.white,
-                    backgroundColor: AppColors.mainColor),
-                AppIcon(
-                    icon: Icons.add,
-                    iconColor: Colors.white,
-                    backgroundColor: AppColors.mainColor),
-                AppIcon(
-                    icon: Icons.share,
-                    iconColor: Colors.white,
-                    backgroundColor: AppColors.mainColor),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: AppColors.mainColor,
+                      fixedSize: const Size(44, 44),
+                      shape: const CircleBorder(),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => foodPageBody()));
+                    },
+                    child: Wrap(
+                      children: [Icon(Icons.home)],
+                    )),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: AppColors.mainColor,
+                      fixedSize: const Size(44, 44),
+                      shape: const CircleBorder(),
+                    ),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => article()));
+                    },
+                    child: Wrap(
+                      children: [Icon(Icons.explore)],
+                    )),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: AppColors.mainColor,
+                      fixedSize: const Size(44, 44),
+                      shape: const CircleBorder(),
+                    ),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => StarFoot()));
+                    },
+                    child: Wrap(
+                      children: [Icon(Icons.add)],
+                    )),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: AppColors.mainColor,
+                      fixedSize: const Size(44, 44),
+                      shape: const CircleBorder(),
+                    ),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => StarFoot()));
+                    },
+                    child: Wrap(
+                      children: [Icon(Icons.account_circle)],
+                    )),
               ],
             )),
       ]),

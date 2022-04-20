@@ -16,6 +16,7 @@ class _StarFootState extends State<StarFoot> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: AppColors.mainColor,
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
@@ -32,77 +33,14 @@ class _StarFootState extends State<StarFoot> {
               ),
               bottom: PreferredSize(
                 preferredSize: Size.fromHeight(20),
-                child: Column(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(right: 20, left: 20),
-                      //color: Colors.white,
-                      child: Center(
-                          child: BigText(
-                        text: "Star du Foot",
-                        size: 26,
-                      )),
-                      width: double.maxFinite,
-                      padding: EdgeInsets.only(top: 5, bottom: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20),
-                        ),
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        AppIcon(
-                            icon: Icons.portrait,
-                            size: 50,
-                            iconColor: Colors.white,
-                            backgroundColor: AppColors.mainColor),
-                        SizedBox(
-                          width: 50,
-                        ),
-                        Column(
-                          children: [
-                            BigText(text: "Sahaba Ndiaye"),
-                            SmallText(text: "Jun,04 2022"),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 150,
-                        ),
-                        AppIcon(
-                            icon: Icons.favorite,
-                            size: 50,
-                            iconColor: Colors.white,
-                            backgroundColor: AppColors.mainColor),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        SmallText(text: "30"),
-                        SizedBox(
-                          width: 80,
-                        ),
-                        AppIcon(
-                            icon: Icons.comment_outlined,
-                            size: 50,
-                            iconColor: Colors.white,
-                            backgroundColor: AppColors.mainColor),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        SmallText(text: "80"),
-                      ],
-                    )
-                  ],
-                ),
+                child: Container(),
               ),
               pinned: true,
               backgroundColor: Colors.yellow,
-              expandedHeight: 300,
+              expandedHeight: 260,
               flexibleSpace: FlexibleSpaceBar(
                 background: Image.asset(
-                  "assets/image/sadio.png",
+                  "image/sadio.png",
                   width: double.maxFinite,
                   fit: BoxFit.cover,
                 ),
@@ -111,6 +49,74 @@ class _StarFootState extends State<StarFoot> {
             SliverToBoxAdapter(
                 child: Column(
               children: [
+                Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(right: 20, left: 20),
+                      //color: Colors.white,
+                      child: Center(
+                          child: BigText(
+                        text: "Star du Foot",
+                        size: 26,
+                        color: Colors.white,
+                      )),
+                      width: double.maxFinite,
+                      padding: EdgeInsets.only(top: 5, bottom: 10),
+                      decoration: BoxDecoration(
+                        color: AppColors.mainColor,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20),
+                        ),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.portrait,
+                          color: Colors.red,
+                          size: 100,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Column(
+                          children: [
+                            BigText(
+                              text: "Sahaba Ndiaye",
+                              color: Colors.white,
+                            ),
+                            SmallText(text: "Jun,04 2022"),
+                          ],
+                        ),
+                        SizedBox(
+                          width: 50,
+                        ),
+                        AppIcon(
+                            icon: Icons.favorite,
+                            size: 50,
+                            iconColor: Colors.white,
+                            backgroundColor: AppColors.mainColor),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        SmallText(text: "30"),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        AppIcon(
+                            icon: Icons.comment_outlined,
+                            size: 50,
+                            iconColor: Colors.white,
+                            backgroundColor: AppColors.mainColor),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        SmallText(text: "80"),
+                      ],
+                    )
+                  ],
+                ),
                 Container(
                   child: ExpandableTextWidget(
                       text:

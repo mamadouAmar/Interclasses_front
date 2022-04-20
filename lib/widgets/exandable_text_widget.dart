@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:projet1/utils/colors.dart';
 import 'package:projet1/widgets/small_text.dart';
 
+import 'big_text.dart';
+
 class ExpandableTextWidget extends StatefulWidget {
   final String text;
   const ExpandableTextWidget({Key? key, required this.text}) : super(key: key);
@@ -32,34 +34,47 @@ class _ExpandableTextWidgetState extends State<ExpandableTextWidget> {
   Widget build(BuildContext context) {
     return Container(
       child: secondHalf.isEmpty
-          ? SmallText(size: 16, text: firstHalf)
+          ? Text(firstHalf, style: TextStyle(color: Colors.white))
           : Column(
               children: [
                 SmallText(
                     heignt: 1.8,
-                    color: AppColors.textColor,
-                    size: 16,
+                    color: Colors.white,
+                    size: 14,
                     text: hiddenText
                         ? (firstHalf + "...")
                         : (firstHalf + secondHalf)),
                 InkWell(
-                  onTap: () {
-                    setState(() {
-                      hiddenText = !hiddenText;
-                    });
-                  },
-                  child: Row(children: [
-                    SmallText(
-                      text: "Voir Plus",
-                      color: AppColors.mainColor,
-                    ),
-                    Icon(
-                        hiddenText
-                            ? Icons.arrow_drop_down
-                            : Icons.arrow_drop_up,
-                        color: AppColors.mainColor),
-                  ]),
-                )
+                    onTap: () {
+                      setState(() {
+                        hiddenText = !hiddenText;
+                      });
+                    },
+                    child: Container(
+                      color: Colors.red,
+                      height: 50,
+                      margin: const EdgeInsets.only(left: 100.0, right: 100.0),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment
+                              .center, //Center Row contents horizontally,
+                          crossAxisAlignment: CrossAxisAlignment
+                              .center, //Center Row contents vertically,
+
+                          children: [
+                            BigText(
+                              text: "Voir Plus",
+                              color: Colors.white,
+                              size: 30,
+                            ),
+                            Icon(
+                              hiddenText
+                                  ? Icons.arrow_drop_down
+                                  : Icons.arrow_drop_up,
+                              color: Colors.white,
+                              size: 30,
+                            ),
+                          ]),
+                    ))
               ],
             ),
     );

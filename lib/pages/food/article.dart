@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:projet1/pages/food/starFoot.dart';
 import 'package:projet1/utils/colors.dart';
 import 'package:projet1/widgets/app_icon.dart';
 import 'package:projet1/widgets/big_text.dart';
@@ -71,64 +72,74 @@ class _articleState extends State<article> {
                     child: Container(
                         margin:
                             EdgeInsets.only(left: 20, right: 20, bottom: 10),
-                        child: Row(children: [
-                          Container(
-                              width: 120,
-                              height: 120,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.white,
-                                  image: DecorationImage(
-                                    fit: BoxFit
-                                        .cover, // give around form of picture
-                                    image: AssetImage("assets/image/sadio.png"),
-                                  ))),
-                          Expanded(
-                            flex: 11,
-                            child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(10),
-                                    bottomRight: Radius.circular(10),
-                                  ),
-                                  color: Colors.white,
-                                ),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 10, right: 10),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          BigText(text: "Article 1"),
-                                          SizedBox(
-                                            height: 30,
-                                          ),
-                                          SmallText(
-                                            text: "04 Jan 2022, 14:16",
-                                            size: 15,
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                        ],
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: AppColors.appBar),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => StarFoot()));
+                            },
+                            child: Row(children: [
+                              Container(
+                                  width: 120,
+                                  height: 120,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Colors.white,
+                                      image: DecorationImage(
+                                        fit: BoxFit
+                                            .cover, // give around form of picture
+                                        image: AssetImage(
+                                            "assets/image/sadio.png"),
+                                      ))),
+                              Expanded(
+                                flex: 11,
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(10),
+                                        bottomRight: Radius.circular(10),
                                       ),
+                                      color: Colors.white,
                                     ),
-                                    AppIcon(
-                                      icon: Icons.bookmark_border_outlined,
-                                      iconColor: AppColors.mainColor,
-                                      // size: 20,
-                                    ),
-                                  ],
-                                )),
-                          ),
-                        ])));
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 10, right: 10),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              BigText(text: "Article 1"),
+                                              SizedBox(
+                                                height: 30,
+                                              ),
+                                              SmallText(
+                                                text: "04 Jan 2022, 14:16",
+                                                size: 15,
+                                              ),
+                                              SizedBox(
+                                                height: 10,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        AppIcon(
+                                          icon: Icons.bookmark_border_outlined,
+                                          iconColor: AppColors.mainColor,
+                                          // size: 20,
+                                        ),
+                                      ],
+                                    )),
+                              ),
+                            ]))));
               }),
         ]));
   }
