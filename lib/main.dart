@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projet1/pages/food/article.dart';
+import 'package:projet1/pages/food/classement.dart';
+import 'package:projet1/pages/food/detail.dart';
 import 'package:projet1/pages/food/starFoot.dart';
 import 'package:projet1/pages/home/index.dart';
 
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //home: const mainFoodPage(),
-      home: StarFoot(),
+      home: Detail(),
     );
   }
 }
